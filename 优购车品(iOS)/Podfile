@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+target '优购车品(iOS)' do
+pod 'AFNetworking', '~> 3.0'
+end
+pod 'Masonry'
+pod 'FMDB'
+pod 'MJRefresh'
+pod 'MBProgressHUD'
+pod 'SDWebImage'
+pod 'MJExtension'
+pod 'Reachability'
