@@ -10,7 +10,7 @@
 #import "DDTabViewController.h"
 
 
-@interface LMDAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

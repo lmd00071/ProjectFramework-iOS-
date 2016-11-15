@@ -10,6 +10,8 @@
 #define DDUGou_pch
 
 #import "UIColor+HexColor.h"
+#import "DDSVPManager.h"
+#import "McAlertView.h"
 
 
 //宽度
@@ -38,7 +40,6 @@
 #define kDDMainBGColorRGBColor            [UIColor colorWithRed:73.0/255.0 green:198.0/255.0 blue:216.0/255.0 alpha:1.0]
 #define kDDNeihanColor                    [UIColor colorWithRed:0.97f green:0.97f blue:0.97f alpha:1.00f];
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
 
 #endif /* DDUGou_pch */

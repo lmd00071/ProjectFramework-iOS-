@@ -103,12 +103,6 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     NSInteger index = scrollView.contentOffset.x/scrollView.bounds.size.width;
-//    self.pageControl.currentPage = index;
-//    if (self.scrollView.dragging)
-//    {
-//        [self.pageControl updateCurrentPageDisplay] ;
-//    }
-
     if(self.pageControl.currentPage != index)
     {
         self.pageControl.currentPage = index;

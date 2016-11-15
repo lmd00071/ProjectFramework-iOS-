@@ -6,15 +6,15 @@
 //  Copyright © 2016年 嗒嗒. All rights reserved.
 //
 
-#import "LMDAppDelegate.h"
+#import "AppDelegate.h"
 #import "FirstGuideViewController.h"
 
-@interface LMDAppDelegate ()
+@interface AppDelegate ()
 
 
 @end
 
-@implementation LMDAppDelegate
+@implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
