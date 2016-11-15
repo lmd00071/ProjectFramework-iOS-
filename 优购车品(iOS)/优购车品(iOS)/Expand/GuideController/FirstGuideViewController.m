@@ -54,10 +54,11 @@
     pageCtl.backgroundColor = [UIColor clearColor];
     self.pageControl = pageCtl;
     self.pageControl.numberOfPages = self.imageList.count;
+    [self.pageControl addTarget:self action:@selector(pageChange:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.pageControl];
     
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth - 100, 40)];
-    btn.center = CGPointMake(kScreenWidth/2, kScreenHeight-60);
+    btn.center = CGPointMake(kScreenWidth/2, kScreenHeight-160);
     btn.backgroundColor = [UIColor clearColor];
     btn.layer.borderColor = kDDMainBGColorRGBColor.CGColor;
     btn.layer.borderWidth = 1;
@@ -70,6 +71,15 @@
     btn.hidden = YES;
     _startBtn = btn;
 }
+
+-(void)pageChange:(UIPageControl*)sender
+{
+    CGRect rect = CGRectMake(self.pageControl.currentPage*self.scrollView.bounds.size.width, 0, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
+    
+    /** 移到可视区 */
+    [self.scrollView scrollRectToVisible:rect animated:YES];
+}
+
 
 -(void)setUpData
 {
@@ -92,8 +102,17 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    int index = fabs(scrollView.contentOffset.x)/scrollView.frame.size.width;
-    self.pageControl.currentPage = index;
+    NSInteger index = scrollView.contentOffset.x/scrollView.bounds.size.width;
+//    self.pageControl.currentPage = index;
+//    if (self.scrollView.dragging)
+//    {
+//        [self.pageControl updateCurrentPageDisplay] ;
+//    }
+
+    if(self.pageControl.currentPage != index)
+    {
+        self.pageControl.currentPage = index;
+    };
     if (index == self.imageList.count - 1) {
         self.startBtn.hidden = NO;
     }
@@ -102,6 +121,9 @@
         self.startBtn.hidden = YES;
     }
 }
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
