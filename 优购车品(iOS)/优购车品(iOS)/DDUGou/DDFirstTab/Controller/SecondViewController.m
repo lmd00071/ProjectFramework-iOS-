@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "DDHomeViewController.h"
 #import "SomeView.h"
 #import "LMDItem.h"
 
@@ -16,6 +17,20 @@
 
 @implementation SecondViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"第二个页面字符串地址-----%p",self.chuanString);
+}
+
+- (IBAction)strchange:(UIButton *)sender {
+    self.chuanString = @"你好";
+    NSLog(@"改变之后的第二个页面字符串地址-----%p",self.chuanString);
+
+}
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -24,7 +39,7 @@
 //    [self.view addSubview:view];
 //    
 //    
-    
+    NSLog(@"%@",self.chuanString);
     //解档和归档(固化和解固)
     LMDItem *item = [[LMDItem alloc]init];
     item.string = @"李明丹";
@@ -61,9 +76,34 @@
     
     NSArray *resuleArr = [[NSArray alloc]initWithContentsOfFile:filePath];
     NSLog(@"%@",resuleArr);
+    
+    
+    [self addObserver:self forKeyPath:@"chuanString" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+    
 
     
 }
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    NSLog(@"\\noldnum:%@ newnum:%@",[change valueForKey:@"old"],
+          [change valueForKey:@"new"]);
+    NSNotification * notice = [NSNotification notificationWithName:@"daohang" object:nil userInfo:nil];
+    [[NSNotificationCenter defaultCenter]postNotification:notice];
+
+    NSLog(@"%@",self.chuanString);
+   
+
+    
+}
+
+
+-(void)dealloc
+{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self removeObserver:self forKeyPath:@"chuanString"];
+}
+
 
 - (void)didReceiveMemoryWarning {
     

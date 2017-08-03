@@ -15,9 +15,17 @@
 
 @interface DDHomeViewController ()
 
+@property (nonatomic,copy)NSString *firstString;
+
 @end
 
 @implementation DDHomeViewController
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"第一个页面字符串地址-----%p",self.firstString);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,13 +48,37 @@
     [btn setTitleColor:kDDMainBGColorRGBColor forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(clickBtnToStart:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:btn];
+    
+    self.firstString = @"第一个页面";
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stringChange) name:@"daohang" object:nil];
+
 
 
 }
 
+-(void)stringChange
+{
+    NSLog(@"字符串变了没-----%@",self.firstString);
+}
+
+
+
+
 -(void)clickBtnToStart:(UIButton*)sender
 {
-    [self.navigationController pushViewController:[[SecondViewController alloc] init] animated:YES];
+    
+    
+    SecondViewController *vc = [[SecondViewController alloc] init];
+    
+    vc.chuanString = self.firstString;
+    
+    NSLog(@"%p",self.firstString);
+    NSLog(@"%p",vc.chuanString);
+    
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -54,6 +86,9 @@
 -(void)pushToad
 {
     AdvertiseViewController *adVc = [[AdvertiseViewController alloc] init];
+    
+    
+    
     [self.navigationController pushViewController:adVc animated:YES];
 }
 

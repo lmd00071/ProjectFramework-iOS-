@@ -111,6 +111,7 @@
 		2F1980801DD894E500A25C67 /* SomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeView.m; sourceTree = "<group>"; };
 		2F1BEEDF1DD99B09001A22B3 /* LMDItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMDItem.h; sourceTree = "<group>"; };
 		2F1BEEE01DD99B09001A22B3 /* LMDItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMDItem.m; sourceTree = "<group>"; };
+		2F5DF30A1DEB3E9B00EC82AB /* APIConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
 		2FF9A41B1DDB798100D522E2 /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		2FF9A4251DDB7A9600D522E2 /* UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
 		2FF9A4261DDB7A9600D522E2 /* UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
@@ -433,6 +434,7 @@
 		17BBD2751D911289003A30C8 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				2F5DF30A1DEB3E9B00EC82AB /* APIConfig.h */,
 				17BBD2791D911935003A30C8 /* LMDHTTPSRequestManager.h */,
 				17BBD27A1D911935003A30C8 /* LMDHTTPSRequestManager.m */,
 				17BBD27C1D911CC2003A30C8 /* LMDBaseRequest.h */,

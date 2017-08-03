@@ -21,7 +21,7 @@
 + (void)alertDisappearMessage:(NSString *)message
 {
     CGFloat maxWidth = SCREEN_WIDTH - 4 * 20;
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:appDelegate.window animated:YES];
     hud.mode = MBProgressHUDModeCustomView;
     UILabel *messageLabel = [[UILabel alloc] initResizeLabelWithText:message width:maxWidth font:UIFontSize(16) isFixedWidth:NO];
@@ -32,7 +32,7 @@
     [customView addSubview:messageLabel];
     hud.customView = customView;
     hud.removeFromSuperViewOnHide = YES;
-    [hud hide:YES afterDelay:3.618];
+    [hud hideAnimated:YES afterDelay:3.618];
 }
 
 

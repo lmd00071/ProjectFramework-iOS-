@@ -10,4 +10,6 @@
 
 @interface SecondViewController : UIViewController
 
+@property (nonatomic,copy)NSString *chuanString;
+
 @end

@@ -8,6 +8,20 @@
 
 #import "LMDHTTPSRequestManager.h"
 #import <AFNetworking.h>
+#import <netinet/in.h>
+#import "Reachability.h"
+#import "UIUtils.h"
+#import "Const.h"
+
+
+// 服务器地址
+
+#ifdef  DEBUG
+//    #define kDDAPIBaseURL @"http://192.168.0.201/api"
+#define kDDAPIBaseURL @"http://120.24.65.96/api"
+#else
+#define kDDAPIBaseURL @"http://120.24.65.96/api"
+#endif
 
 
 static CGFloat const timeout = 3.0;
@@ -93,5 +107,36 @@ static CGFloat const timeout = 3.0;
         
     }];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

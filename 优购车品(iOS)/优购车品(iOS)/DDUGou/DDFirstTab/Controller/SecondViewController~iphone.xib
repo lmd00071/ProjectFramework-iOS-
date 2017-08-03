@@ -36,6 +36,15 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVe-tR-Fvm">
+                    <rect key="frame" x="133" y="531" width="34" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.62612704760618099" green="1" blue="0.56231588498734375" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="str"/>
+                    <connections>
+                        <action selector="strchange:" destination="-1" eventType="touchDown" id="pOY-HE-zaA"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.094943049020000003" blue="0.2075950006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
